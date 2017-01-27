@@ -18,7 +18,6 @@
     "node": ">= 0.12.0"
   },
   "peerDependencies": {
-    "@mirego/scientia-styles": "0.2.x",
     "ember-inline-svg": "0.1.x"
   },
   "devDependencies": {
