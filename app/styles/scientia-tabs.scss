@@ -1,0 +1,94 @@
+.scientia-tabs {
+  display: flex;
+  position: relative;
+  bottom: -1px; // We want the tab box to be on top of the container
+}
+
+.scientia-tabs-item {
+  text-transform: uppercase;
+}
+
+.scientia-tabs-item-link {
+  transition: color $transition-easing $transition-speed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  padding: 10px 20px;
+  position: relative;
+  background: $color-white;
+  border: 1px solid $color-border;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  font-size: 13px;
+  color: $color-black;
+
+  &:hover,
+  &:focus {
+    color: $color-secondary;
+
+    .scientia-tabs-item-link-icon {
+      fill: $color-secondary;
+    }
+  }
+}
+
+.scientia-tabs-item:first-child:not(:only-of-type) {
+  .scientia-tabs-item-link {
+    border-right-color: transparent;
+  }
+}
+
+.scientia-tabs-item ~ .scientia-tabs-item:not(:last-child) {
+  .scientia-tabs-item-link {
+    border-right-color: transparent;
+  }
+}
+
+.scientia-tabs-item-link-icon {
+  flex: 0 0 27px;
+  height: 27px;
+  width: 27px;
+  fill: $color-black;
+}
+
+.scientia-tabs-item-link-icon--materials {
+  flex: 0 0 14px;
+  width: 14px;
+}
+
+.scientia-tabs-item-link-icon + .scientia-tabs-item-link-text {
+  margin-left: 11px;
+}
+
+.scientia-tabs-item-link--active {
+  border-bottom-color: $color-white;
+  color: $color-secondary;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: $color-white;
+    background: $color-white;
+    color: $color-secondary;
+
+    .scientia-tabs-item-link-icon {
+      fill: $color-secondary;
+    }
+  }
+
+  .scientia-tabs-item-link-icon {
+    fill: $color-secondary;
+  }
+}
+
+@media (max-width: $viewport-large) {
+  .scientia-tabs-item-link-icon {
+    flex-basis: 17px;
+    height: 17px;
+    width: 17px;
+  }
+
+  .scientia-tabs-item-link {
+    font-size: 12px;
+  }
+}
